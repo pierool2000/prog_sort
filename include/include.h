@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 typedef struct file_stock {
-    char *word;
-    file_stock_t *next;
+    char word[256];
+    struct file_stock *next;
 } file_stock_t;
 
 typedef struct pfunc {
@@ -14,4 +14,8 @@ typedef struct pfunc {
 
 void addend(file_stock_t **head, char *str);
 
-int delete_all(file_stock_t *chain);
+void deleteall(file_stock_t *chain);
+
+void printlist(file_stock_t *head);
+
+int bubblesort(file_stock_t **head);
