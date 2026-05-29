@@ -6,6 +6,7 @@ NAME_LIB	=	lib.a
 
 SRCS	=	src/listfunc.c	\
 			src/bubblesort.c	\
+			src/typesort.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -1,5 +1,6 @@
 #include "../include/include.h"
 
+// rajoute automatiquement a la fin d'une list
 void addend(file_stock_t **head, char *str) {
     file_stock_t *current = NULL;
     file_stock_t *new = malloc(sizeof(file_stock_t));
@@ -21,6 +22,7 @@ void addend(file_stock_t **head, char *str) {
     return;
 }
 
+// supprime entiérement un list
 void deleteall(file_stock_t *chain) {
     file_stock_t *current = chain;
     file_stock_t *del = NULL;
@@ -33,6 +35,7 @@ void deleteall(file_stock_t *chain) {
     return;
 }
 
+// affiche list
 void printlist(file_stock_t *head) {
     file_stock_t *current = head;
 
