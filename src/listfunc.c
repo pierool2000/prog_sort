@@ -12,12 +12,14 @@ void addend(file_stock_t **head, char *str) {
     new->next = NULL;
     strcpy(new->word, str);
     if (*head == NULL) {
+        new->prev = NULL;
         *head = new;
         return;
     }
     current = *head;
     while (current->next != NULL)
         current = current->next;
+    new->prev = current;
     current->next = new;
     return;
 }
@@ -45,3 +47,4 @@ void printlist(file_stock_t *head) {
     }
     return;
 }
+ 

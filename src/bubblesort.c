@@ -3,15 +3,23 @@
 static file_stock_t *current;
 static file_stock_t *prev;
 static file_stock_t *next;
+static file_stock_t *next_n;
 
 // inverse les donné dans la list
 static int swap(file_stock_t **head) {
-    current->next = next->next;
+    next_n = next->next;
+    current->next = next_n;
+    if (next_n != NULL)
+        next_n->prev = current;
     next->next = current;
-    if(prev == NULL)
+    current->prev = next;
+    if (prev == NULL) {
+        next->prev = NULL;
         *head = next;
-    else 
+    } else {
+        next->prev = prev;
         prev->next = next;
+    }
     prev = next;
     return 1; 
 }

@@ -5,6 +5,7 @@
 typedef struct file_stock {
     char word[256];
     struct file_stock *next;
+    struct file_stock *prev;
 } file_stock_t;
 
 typedef struct typesort {
@@ -26,4 +27,6 @@ int cmp_alpha(file_stock_t *a, file_stock_t *b);
 int cmp_length(file_stock_t *a, file_stock_t *b);
 
 int bubblesort(file_stock_t **head, char *mode);
+
+int insertionsort(file_stock_t **head, char *mode);
 

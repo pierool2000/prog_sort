@@ -20,3 +20,13 @@ int cmp_alpha(file_stock_t *a, file_stock_t *b) {
 int cmp_length(file_stock_t *a, file_stock_t *b) {
     return utf8_strlen(a->word) - utf8_strlen(b->word);
 }
+
+// tri alphabéthique revers
+int cmp_revalpha(file_stock_t *a, file_stock_t *b) {
+    return strcmp(a->word, b->word) * -1;
+}
+
+// tri parre la longeur revers
+int cmp_revlength(file_stock_t *a, file_stock_t *b) {
+    return (utf8_strlen(a->word) - utf8_strlen(b->word)) * -1;
+}

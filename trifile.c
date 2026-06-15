@@ -2,6 +2,7 @@
 
 typesort_t commads[] = {
     {"bubble", bubblesort},
+    {"insertion", insertionsort},
     {NULL,      NULL}
 };
 
