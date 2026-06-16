@@ -47,10 +47,9 @@ int bubblesort(file_stock_t **head, char *mode) {
     
     if (*head == NULL)
         return 0;
-    if (mode != NULL && strcmp("alpha", mode) == 0)
-        cmp = cmp_alpha;
-    else
-        cmp = cmp_length;
+    cmp = get_cmp(mode);
+    if (cmp == NULL)
+        return 0;
     while (swapped) {
         swapped = 0;
         swapped = sort(head, swapped, cmp);

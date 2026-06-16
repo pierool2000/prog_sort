@@ -13,6 +13,11 @@ typedef struct typesort {
     int (*func)(file_stock_t**, char*);
 } typesort_t;
 
+typedef struct typetrie {
+    char *name;
+    int (*cmp)(file_stock_t*, file_stock_t*);
+} typetrie_t;
+
 // func list
 void addend(file_stock_t **head, char *str);
 
@@ -25,6 +30,12 @@ void printlist(file_stock_t *head);
 int cmp_alpha(file_stock_t *a, file_stock_t *b);
 
 int cmp_length(file_stock_t *a, file_stock_t *b);
+
+int cmp_revalpha(file_stock_t *a, file_stock_t *b);
+
+int cmp_revlength(file_stock_t *a, file_stock_t *b);
+
+int (*get_cmp(char *mode))(file_stock_t*, file_stock_t*);
 
 int bubblesort(file_stock_t **head, char *mode);
 
